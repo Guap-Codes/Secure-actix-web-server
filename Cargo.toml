@@ -1,0 +1,20 @@
+[package]
+name = "secure-actix-web-server"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+log = "0.4"
+env_logger = "0.10"  # Simple logger implementation
+config = "0.13"      # Configuration management
+dotenv = "0.15"      # Environment variable support
+rustls = "0.20"      # TLS/SSL support
+rustls-pemfile = "1.0"
+actix-web = { version = "4.0", features = ["rustls"]}    # Web framework (optional, if you choose to use it)
+actix-rt = "2.7"
+num_cpus = "1.13"
+reqwest = { version = "0.11", features = ["rustls-tls"]}
+
+[lib]
+name = "main"
+path = "src/main.rs"
